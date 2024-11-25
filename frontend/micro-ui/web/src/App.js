@@ -36,6 +36,12 @@ import { initWSComponents } from "@upyog/digit-ui-module-ws";
 // import { initCustomisationComponents } from "./Customisations";
 import { initCommonPTComponents } from "@upyog/digit-ui-module-commonpt";
 import { initBillsComponents } from "@upyog/digit-ui-module-bills";
+import {
+  PTRModule,
+  PTRLinks,
+  PTRComponents,
+} from "@upyog-niua/upyog-ui-module-ptr";
+import { ASSETComponents, ASSETLinks, ASSETModule } from "@nudmcdgnpm/upyog-ui-module-asset";
 
 // import { initReportsComponents } from "@upyog/digit-ui-module-reports";
 
@@ -64,7 +70,9 @@ const enabledModules = [
   "BillAmendment",
   "FireNoc",
   "Birth",
-  "Death"
+  "Death",
+  "PTR",
+  "ASSET"
 ];
 window.Digit.ComponentRegistryService.setupRegistry({
   ...paymentConfigs,
@@ -78,7 +86,14 @@ window.Digit.ComponentRegistryService.setupRegistry({
   HRMSModule,
   TLModule,
   TLLinks,
-  ReceiptsModule
+  ReceiptsModule,
+  PTRModule,
+  PTRLinks,
+  ...PTRComponents,
+  ASSETModule,
+  ASSETLinks,
+  ...ASSETComponents,
+
 });
 
 initPGRComponents();
